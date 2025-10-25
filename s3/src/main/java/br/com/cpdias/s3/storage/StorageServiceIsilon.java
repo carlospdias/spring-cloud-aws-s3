@@ -3,26 +3,24 @@ package br.com.cpdias.s3.storage;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import software.amazon.awssdk.core.sync.RequestBody;
-import software.amazon.awssdk.services.s3.S3Client;
-import software.amazon.awssdk.services.s3.model.*;
 
 import java.io.IOException;
 
 import java.util.List;
 
 @Service
-public class StorageService {
+public class StorageServiceIsilon {
 
-    private final Logger log = LoggerFactory.getLogger(StorageService.class);
+    private final Logger log = LoggerFactory.getLogger(StorageServiceIsilon.class);
 
     private Storage storage;
+    private StorageObjectDao storageObjectDao;
 
-    public StorageService(Storage storage) {
+    public StorageServiceIsilon(Storage storage, StorageObjectDao storageObjectDao) {
         this.storage = storage;
+        this.storageObjectDao = storageObjectDao;
     }
 
 

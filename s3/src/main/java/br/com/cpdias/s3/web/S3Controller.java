@@ -1,7 +1,7 @@
 package br.com.cpdias.s3.web;
 
 
-import br.com.cpdias.s3.storage.StorageService;
+import br.com.cpdias.s3.storage.StorageServiceIsilon;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +15,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/s3")
 public class S3Controller {
-    private final StorageService s3Service;
+    private final StorageServiceIsilon s3Service;
 
-    public S3Controller(StorageService s3Service) {
+    public S3Controller(StorageServiceIsilon s3Service) {
         this.s3Service = s3Service;
     }
 
